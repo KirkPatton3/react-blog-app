@@ -1,0 +1,140 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 36px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.active {
+  border-bottom-color: #ffffff;
+}
+
+.active:hover {
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.caret {
+  font-size: 0.85em;
+  transition: transform 0.15s ease;
+}
+
+.caretOpen {
+  transform: rotate(180deg);
+}
+
+.menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  z-index: 10;
+  width: max-content;
+  max-width: min(320px, 90vw);
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  transform: translateX(-50%);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: var(--shadow-menu);
+  max-height: min(400px, 60vh);
+  overflow-y: auto;
+}
+
+.menuStatus {
+  padding: 10px 12px;
+  color: var(--color-text-muted);
+  font-size: 0.975rem;
+}
+
+.menuLink {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--color-text);
+  font-size: 0.975rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menuLink:hover {
+  background-color: var(--color-surface-alt);
+  color: var(--color-accent);
+}
+
+.menuLinkActive {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.themeToggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.themeToggle :global(.material-symbols-outlined) {
+  font-size: 18px;
+}
+
+.link:focus-visible,
+.themeToggle:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .nav {
+    position: relative;
+    gap: 12px 20px;
+  }
+
+  .dropdown {
+    position: static;
+  }
+
+  .menu {
+    top: calc(100% + 8px);
+    right: 0;
+    left: 0;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+}
