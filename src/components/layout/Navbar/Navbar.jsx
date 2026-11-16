@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router';
 import { ThemeContext } from '../../../context/ThemeContext.js';
-import { getPosts } from '../../../api/blogApi.js';
+import { getPosts } from '../../../api/blogAPI.js';
 import styles from './Navbar.module.css';
 
 function linkClass({ isActive }) {
